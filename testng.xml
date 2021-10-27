@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite1" verbose="1" parallel="tests" thread-count="1">
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    </listeners>
+    <test name="Regression Test with Chrome" >
+        <parameter name="browserName" value="chrome"/>
+        <classes>
+           <class name="TestAppointment" />
+        </classes>
+    </test>
+    <test name="Regression Test on Firefox" >
+        <parameter name="browserName" value="firefox"/>
+        <classes>
+          <class name="TestAppointment" />
+        </classes>
+    </test>
+    <test name="Regression Test on Safari" >
+        <parameter name="browserName" value="safari"/>
+        <classes>
+           <class name="TestAppointment" />
+        </classes>
+    </test>
+    <test name="Regression Test on Opera" >
+        <parameter name="browserName" value="opera"/>
+        <classes>
+          <class name="TestAppointment" />
+        </classes>
+    </test>
+</suite>

@@ -1,10 +1,10 @@
 package Pages;
 
-import Locators.HomeLocators;
 import org.openqa.selenium.WebDriver;
 
+import static Locators.HomeLocators.BUTTON_MAKE_APPOINTMENT;
+
 public class HomePage extends BasePage {
-    HomeLocators locators = new HomeLocators();
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -13,6 +13,6 @@ public class HomePage extends BasePage {
      * click Make Appointment button
      */
     public void clickMakeAppointment() {
-        click(locators.BUTTON_MAKE_APPOINTMENT);
+        click(BUTTON_MAKE_APPOINTMENT);
     }
 }

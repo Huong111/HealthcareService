@@ -8,15 +8,19 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.remote.session.FirefoxFilter;
 import org.testng.Reporter;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class BasePage {
 
-    protected static WebDriver driver;
+    protected WebDriver driver;
 
     public BasePage(WebDriver driver) {
+
         this.driver = driver;
     }
 
@@ -105,6 +109,18 @@ public class BasePage {
     }
 
     /**
+     * Set text into element no clear data
+     *
+     * @param by   the element
+     * @param text the value
+     */
+    public void setTextAppointment(By by, String text) {
+        Reporter.log("Set text on the element by locator " + by.toString() + " with the value: " + text);
+        WebElement element = driver.findElement(by);
+        element.sendKeys(text);
+    }
+
+    /**
      * Get element size
      *
      * @param by the element
@@ -126,4 +142,5 @@ public class BasePage {
     public void cleanUp() {
         driver.quit();
     }
+
 }
